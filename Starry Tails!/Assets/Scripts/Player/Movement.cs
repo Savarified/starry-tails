@@ -8,10 +8,13 @@ public class Movement : MonoBehaviour
     [HideInInspector] public bool alive;
     private Vector2 delta;
     private Rigidbody2D rb;
+
+    private Animator anim;
     void Start()
     {
         alive = true;
         rb = this.GetComponent<Rigidbody2D>();
+        anim = this.GetComponent<Animator>();
     }
 
     void Update()
@@ -48,6 +51,9 @@ public class Movement : MonoBehaviour
         }
         speed /= world_scale;
         transform.position += new Vector3(delta.x * speed, delta.y * speed, 0);
+
+        anim.SetBool("sprinting", sprinting);
+        anim.SetBool("walking", (delta.x>0));
     }
 
     public float jump_force = 16f;

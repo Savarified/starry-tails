@@ -26,11 +26,7 @@ public class Movement : MonoBehaviour
             RaycastHit2D hit_left = Physics2D.Raycast(transform.position, -Vector2.right, 0.5f + 0.1f, mask);
             RaycastHit2D hit_right = Physics2D.Raycast(transform.position, Vector2.right, 0.5f + 0.1f, mask);
             if((hit_bottom) || (hit_left) || (hit_right)){
-                //Debug.Log("On ground");
                 Jump();
-            }
-            else{
-                //Debug.Log("Not on ground");
             }
         }
     }

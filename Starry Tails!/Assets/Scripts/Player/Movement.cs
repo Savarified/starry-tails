@@ -56,4 +56,19 @@ public class Movement : MonoBehaviour
     void Jump(){
         rb.AddForce((jump_force*10) * Vector3.up);
     }
+
+    void Die(){
+        Time.timeScale = 0f;
+        alive = false;
+        //GameObject.Find("deathscreen").SetActive(true);
+    }
+
+    void Respawn(){
+        if (!alive){
+            alive = true;
+            Transform spawnpoint = GameObject.Find("spawnpoint").transform;
+            transform.position = spawnpoint;
+            Time.timeScale = 1.0f;
+        }
+    }
 }

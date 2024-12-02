@@ -1,0 +1,35 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneLoader : MonoBehaviour
+{
+    public void LoadMenu(){
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+    }
+
+    public void LoadOptions(){
+        SceneManager.LoadScene("Options", LoadSceneMode.Single);
+    }
+
+    public void LoadCredits(){
+        SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+    }
+
+    public void Quit(){
+        Application.Quit();
+    }
+
+    public void LoadWorld1(){
+        SceneManager.LoadScene("W1L1", LoadSceneMode.Single);
+    }
+
+    public void LoadWorld2(){
+        SceneManager.LoadScene("W2L1", LoadSceneMode.Single);
+    }
+
+    public void LoadWorld3(){
+        SceneManager.LoadScene("W3L1", LoadSceneMode.Single);
+    }
+
+
+}
